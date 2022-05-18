@@ -106,7 +106,14 @@ const include_plugin = (md, options) => {
 
         if (mdSrc[len - 1] === '\n') {
           mdSrc = mdSrc.substring(0, len - 1);
-        }
+        } // To workaround a bug https://github.com/mjbvz/markdown-it-katex/issues/3
+        // relating to list continuation
+        // after a kaTex display equation, we need to remove
+        // any line break before display equations.
+        // However, we need to not touch lines that begin immediately with $$.
+
+
+        mdSrc = mdSrc.replaceAll(/\n(\s+\$\$)/gm, '$1');
       } // replace include by file content
 
 
