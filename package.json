@@ -1,5 +1,5 @@
 {
-  "name": "markdown-it-include",
+  "name": "markdown-it-include-custom-replacements",
   "version": "2.0.0",
   "description": "Markdown-it plugin which adds the ability to include markdown fragment files.",
   "keywords": [

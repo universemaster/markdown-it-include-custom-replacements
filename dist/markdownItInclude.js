@@ -1,4 +1,4 @@
-/*! markdown-it-include 2.0.0 https://github.com//camelaissani/markdown-it-include @license MIT */
+/*! markdown-it-include-custom-replacements 2.0.0 https://github.com//camelaissani/markdown-it-include-custom-replacements @license MIT */
 
 'use strict';
 
