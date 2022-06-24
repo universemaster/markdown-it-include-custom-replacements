@@ -117,7 +117,7 @@
 
 
           mdSrc = mdSrc.replaceAll(/\n(\s+\$\$)/gm, '$1') // We'll also put a space before differentials that end integrals.  I don't want to cluster my tex source with this nonsense.
-          .replaceAll(/(∫.+?)( d)(s|t|x|y|u|z)/gm, '$1\\,d$3');
+          .replaceAll(/(∫.+?)( d)(s|t|x|y|u|z|θ)/gm, '$1\\,d$3');
         } // replace include by file content
 
 
