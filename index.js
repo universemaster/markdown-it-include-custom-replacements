@@ -92,9 +92,10 @@ const include_plugin = (md, options) => {
         // However, we need to not touch lines that begin immediately with $$.
         mdSrc = mdSrc.replaceAll(/\n(\s+\$\$)/gm, '$1')
           // We'll also put a space before differentials that end integrals.  I don't want to cluster my tex source with this nonsense.
-          .replaceAll(/(∫.+?)( d)(s|t|x|y|u|z|θ)/gm, '$1\\,d$3');
+          .replaceAll(/(∫.+?)( d)(s|t|x|y|u|z|θ)/gm, '$1\\,d$3')
+          .replaceAll(/\\textbf\{([^}]){2,}\}/gm, '\\style{font-weight:bold;}{\\text{$1}}');
         // Regex to find all differential d's.   \bd[^o]\b
-        // The idea is that we could make them \mathrm but since options differ, I won't do this here.
+        // The idea is that we could make them \mathrm but since opinions on the correct typography differ, I won't do this here.
       }
       // replace include by file content
       src = src.slice(0, cap.index) + mdSrc + src.slice(cap.index + cap[0].length, src.length);
